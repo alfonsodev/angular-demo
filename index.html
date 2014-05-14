@@ -13,9 +13,11 @@
   <script src="vendors/angular-route/angular-route.js"></script>
   <script src="app/home/homeController.js"></script>
   <script src="app/phone/phoneController.js"></script>
+  <script src="app/common/ApiService.js"></script>
   <script>
     var angularDemo = angular.module('angularDemo',['ngRoute']);
-
+    angularDemo.factory('ApiService', ApiService);
+     
     angularDemo.config(function( $routeProvider){
       $routeProvider.
         when('/home',{ controller: homeController, templateUrl: 'app/home/home.html'}).

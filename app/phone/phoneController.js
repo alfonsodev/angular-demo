@@ -1,3 +1,5 @@
-function phoneController() {
-  console.log('phone controller executed');
+function phoneController($scope, ApiService) {
+  ApiService.get(function(err, data) {
+    $scope.phones = data;
+  });
 }
