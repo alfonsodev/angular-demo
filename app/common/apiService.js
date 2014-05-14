@@ -1,15 +1,15 @@
 var ApiService = function($http) {
-
   var api = {
     get: function(callback) {
-      var data = [
-        { name: 'Samsung Galaxy', url: 'http://www.samsung.com/galaxy' }
-        { name: 'Nokia 3600' , url: 'https://www.apple.com/iphone/' }
-      ];
-      callback(null, data);
+      var baseUrl = 'http://localhost:3000';
+      $http({method: 'GET', url: baseUrl + '/api' }).
+      success(function(data, status, headers, config) {
+        callback(null, data);
+      }).
+      error(function(data, status, headers, config) {
+        callback(data, null);
+      });
     }
   };
-
   return api;
-
 }

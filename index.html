@@ -14,16 +14,5 @@
   <script src="app/home/homeController.js"></script>
   <script src="app/phone/phoneController.js"></script>
   <script src="app/common/ApiService.js"></script>
-  <script>
-    var angularDemo = angular.module('angularDemo',['ngRoute']);
-    angularDemo.factory('ApiService', ApiService);
-     
-    angularDemo.config(function( $routeProvider){
-      $routeProvider.
-        when('/home',{ controller: homeController, templateUrl: 'app/home/home.html'}).
-        when('/phones',{ controller: phoneController, templateUrl: 'app/phone/list.html'}).
-        otherwise({ redirectTo: '/home' });
-    });
-
-  </script>
+  <script src="app/app.js"></script>
 </html>
