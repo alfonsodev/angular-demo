@@ -1,0 +1,27 @@
+<html lang="en" ng-app="angularDemo">
+  <head>
+    <title>Angular Demo</title>
+  </head>
+  <body>
+    <h1>Angular Demo</h1>
+      <a href="/">Home</a> | <a href="/#/phones">Phones</a><br>
+    <div ng-view>
+    </div>
+
+  </body>
+  <script src="vendors/angular/angular.js"></script>
+  <script src="vendors/angular-route/angular-route.js"></script>
+  <script src="app/home/homeController.js"></script>
+  <script src="app/phone/phoneController.js"></script>
+  <script>
+    var angularDemo = angular.module('angularDemo',['ngRoute']);
+
+    angularDemo.config(function( $routeProvider){
+      $routeProvider.
+        when('/home',{ controller: homeController, templateUrl: 'app/home/home.html'}).
+        when('/phones',{ controller: phoneController, templateUrl: 'app/phone/list.html'}).
+        otherwise({ redirectTo: '/home' });
+    });
+
+  </script>
+</html>
